@@ -1,0 +1,27 @@
+from Domain.writeReadFile import readFile
+from UI.User import *
+from Tests.test_modifyExpenses import *
+from Tests.test_removeExpenses import *
+from Tests.test_addExpenses import *
+from Tests.test_delAllExpenses import test_delAllExpenses
+from Tests.test_descendingOrder import *
+from Tests.test_maxExpense import *
+from Tests.test_MonthlyExpenses import *
+#from Domain.setters import createObject
+
+def main():
+    try:
+        expensesList = readFile()
+    except:
+        expensesList = []
+    userInterface(expensesList)
+
+test_delAllExpenses()
+test_addExpenses()
+test_removeExpenses()
+test_modifyExpenses()
+test_descendingOrder()
+test_maxExpenses()
+test_monthlyExpenses()
+test_addValueToAllExpenses()
+main()
